@@ -1,24 +1,15 @@
 import React from "react";
+import Header from "./components/Header/Header";
+import AddTask from "./components/AddTask/AddTask";
+import TodoList from "./components/TodoList/TodoList";
 
 function App() {
-  const [count, setCount] = React.useState(0);
-
-  function addCount() {
-    setCount((c) => c + 1);
-  }
-
   return (
-    <>
-      <h1>
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Temporibus
-        sint unde ipsam ducimus, cupiditate quasi dignissimos officiis vel odit
-        cum, alias eaque incidunt maxime et blanditiis aperiam voluptatum
-        voluptas deleniti.
-      </h1>
-      <button onClick={addCount} className="bg-blue-300 p-6">
-        {count}
-      </button>
-    </>
+    <div className="bg-indigo-950 max-w-md m-auto p-4 flex flex-col rounded-md mt-2">
+      <Header />
+      <AddTask />
+      <TodoList />
+    </div>
   );
 }
 
