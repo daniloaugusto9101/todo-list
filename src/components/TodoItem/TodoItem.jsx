@@ -1,13 +1,22 @@
 import React from "react";
-import { FaTrash, FaEdit } from "react-icons/fa";
+import { FaTrash } from "react-icons/fa";
 
-const TodoItem = ({ task }) => {
+const TodoItem = ({ obj, removeTask, completeTask }) => {
   return (
     <main className="flex items-center bg-violet-500 rounded p-2 mb-4 text-white">
-      <p className="flex-1">{task}</p>
+      <p
+        className={`flex-1 cursor-pointer ${
+          obj.isCompleted && "line-through text-gray-400"
+        } `}
+        onClick={() => completeTask(obj.id)}
+      >
+        {obj.text}
+      </p>
       <div className="flex gap-2">
-        <FaTrash className="cursor-pointer" />
-        <FaEdit className="cursor-pointer" />
+        <FaTrash
+          className="cursor-pointer"
+          onClick={() => removeTask(obj.id)}
+        />
       </div>
     </main>
   );
